@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean name="stud1" class="com.graymatter.beans.Student" autowire="byType">
+    	<constructor-arg name="name" value="Amit"></constructor-arg>
+    	<constructor-arg name="id" value="100"></constructor-arg>
+    	<constructor-arg name="course" ref="crs"></constructor-arg> 
+    	    
+    <!--</bean>
+    <bean name="stud2" class="com.graymatter.beans.Student">
+    	<property name="name" value="vikky"></property>
+    	<property name="id" value="101"></property>-->
+    	
+    </bean>	
+    <bean name="crs" class="com.graymatter.beans.Course">
+    	<constructor-arg name="id" value="56"></constructor-arg>
+    	<constructor-arg name="courses">
+    		<set>
+    			<value>course1</value>
+    			<value>course2</value>
+    			<value>course3</value>
+    			<value>course4</value>
+    		</set>
+    	</constructor-arg>
+    </bean>
+
+</beans>
